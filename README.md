@@ -87,7 +87,7 @@ Esta arquitetura implementa os padrões de Well-Architected Framework da AWS, es
 
 ## 📎 Apresentação
 
-Você pode visualizar a apresentação em PDF na pasta https://github.com/TiagoMascarenhas/ArquiteturaConfiabilidade/blob/main/Apresenta%C3%A7%C3%A3o%20-%20Confiabilidade.pdf
+Você pode visualizar a apresentação [clicando aqui](https://github.com/TiagoMascarenhas/ArquiteturaConfiabilidade/blob/main/Apresenta%C3%A7%C3%A3o%20-%20Confiabilidade.pdf).
 
 ---
 
