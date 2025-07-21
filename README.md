@@ -55,20 +55,39 @@ O **CloudFormation** permite criar e gerenciar toda a infraestrutura como códig
 
 O **CloudWatch** é essencial para monitoramento contínuo, coleta de métricas e geração de alarmes. Ele permite observar o desempenho dos serviços em tempo real e agir rapidamente em caso de falhas.
 
-#### 🧩 5. Conclusão da Arquitetura
+🧩 5. Conclusão da Arquitetura
+A arquitetura proposta é composta por uma combinação de serviços AWS integrados que formam um ecossistema robusto de alta disponibilidade e recuperação de desastres. Ela garante:
+🔧 Tolerância a Falhas:
 
-A arquitetura proposta integra múltiplos serviços da AWS de forma orquestrada, garantindo:
-- Alta disponibilidade
-- Tolerância a falhas
-- Monitoramento e segurança constantes
+Amazon RDS Multi-AZ: Proporciona failover automático com RPO próximo a zero através de replicação síncrona entre zonas de disponibilidade
+AWS Elastic Load Balancer: Implementa health checks automáticos e redistribui tráfego apenas para instâncias saudáveis, eliminando pontos únicos de falha
+Amazon Route 53: Oferece roteamento baseado em saúde com failover DNS automático, direcionando tráfego para recursos disponíveis
 
-Essa composição assegura a continuidade das operações mesmo diante de imprevistos, sendo ideal para empresas que precisam de confiabilidade no ambiente em nuvem.
+⚡ Recuperação Automática:
+
+AWS Auto Scaling Groups: Detecta falhas de instâncias EC2 e automaticamente substitui recursos indisponíveis, mantendo a capacidade desejada
+AWS CloudFormation: Permite recriação rápida e consistente da infraestrutura através de templates versionados (Infrastructure as Code)
+AWS Backup: Executa backups automatizados cross-region com políticas de retenção configuráveis e restauração point-in-time
+
+🛡️ Proteção contra Ameaças:
+
+AWS WAF: Filtra tráfego malicioso através de regras personalizáveis, protegendo contra OWASP Top 10 e ataques DDoS de camada de aplicação
+Amazon S3: Garante durabilidade de 99.999999999% (11 9's) através de replicação automática em múltiplas facilities
+AWS CloudWatch: Monitora métricas em tempo real e dispara alarmes para detecção proativa de anomalias e incidentes
+
+🔄 Operação Contínua:
+
+Multi-AZ Deployment: Distribui recursos em pelo menos 3 zonas de disponibilidade, garantindo continuidade mesmo com falhas de datacenter
+Cross-Region Replication: Amazon S3 e RDS permitem replicação geográfica para cenários de disaster recovery
+Elastic Load Balancing: Suporta health checks avançados com failover em segundos, mantendo SLA de 99.99% de uptime
+
+Esta arquitetura implementa os padrões de Well-Architected Framework da AWS, especificamente os pilares de Reliability e Security, proporcionando RTO (Recovery Time Objective) de minutos e RPO (Recovery Point Objective) próximo a zero, essenciais para operações críticas de negócio.
 
 ---
 
 ## 📎 Apresentação
 
-Você pode visualizar a apresentação em PDF na pasta [docs/apresentacao.pdf](./docs/apresentacao.pdf)
+Você pode visualizar a apresentação em PDF na pasta https://github.com/TiagoMascarenhas/ArquiteturaConfiabilidade/blob/main/Apresenta%C3%A7%C3%A3o%20-%20Confiabilidade.pdf
 
 ---
 
